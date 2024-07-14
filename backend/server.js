@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(cors(
   {
-    origin : ["https://todofrontend-pratik3311s-projects.vercel.app/"],
+    origin : ["https://todofrontend-pratik3311s-projects.vercel.app"],
     methods :["POST","GET","DELETE"],
     credentials : true
   }
