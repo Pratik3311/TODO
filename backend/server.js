@@ -46,7 +46,7 @@ app.get('/api/items', async (req, res) => {
 });
 
 // POST new item
-app.post('/api/items', async (req, res) => {
+app.post('https://todo-backend-ggvd.onrender.com//api/items', async (req, res) => {
   const { title, description } = req.body;
   try {
     const newItem = new Item({ title, description });
@@ -59,7 +59,7 @@ app.post('/api/items', async (req, res) => {
 });
 
 // DELETE item by ID
-app.delete('/api/items/:id', async (req, res) => {
+app.delete('https://todo-backend-ggvd.onrender.com//api/items/:id', async (req, res) => {
   const { id } = req.params;
   try {
     await Item.findByIdAndDelete(id);
