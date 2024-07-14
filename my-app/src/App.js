@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('https://todobackend-pratik3311s-projects.vercel.app/');
+      const response = await axios.get('https://todobackend-pratik3311s-projects.vercel.app/api/items');
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching items:', error);
@@ -24,7 +24,7 @@ const App = () => {
     if (!title || !description) return;
 
     try {
-      const response = await axios.post('https://todobackend-pratik3311s-projects.vercel.app/', { title, description });
+      const response = await axios.post('https://todobackend-pratik3311s-projects.vercel.app/api/items', { title, description });
       setItems([...items, response.data]);
       setTitle('');
       setDescription('');
@@ -35,7 +35,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://todobackend-pratik3311s-projects.vercel.app/${id}`);
+      await axios.delete(`https://todobackend-pratik3311s-projects.vercel.app/api/items/${id}`);
       const updatedItems = items.filter(item => item._id !== id);
       setItems(updatedItems);
     } catch (error) {
