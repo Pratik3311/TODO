@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/items');
+      const response = await axios.get('https://todobackend-pratik3311s-projects.vercel.app/');
       setItems(response.data);
     } catch (error) {
       console.error('Error fetching items:', error);
@@ -35,7 +35,7 @@ const App = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/items/${id}`);
+      await axios.delete(`https://todobackend-pratik3311s-projects.vercel.app/${id}`);
       const updatedItems = items.filter(item => item._id !== id);
       setItems(updatedItems);
     } catch (error) {
