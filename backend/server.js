@@ -8,13 +8,11 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors(
-  {
-    origin : ["https://todofrontend-pratik3311s-projects.vercel.app"],
-    methods :["POST","GET","DELETE"],
-    credentials : true
-  }
-));
+app.use(cors({
+    origin: 'https://todofrontend-7uabz4tdp-pratik3311s-projects.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use(bodyParser.json());
 
 // MongoDB Connection
