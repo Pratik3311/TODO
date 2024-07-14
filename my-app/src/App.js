@@ -24,7 +24,7 @@ const App = () => {
     if (!title || !description) return;
 
     try {
-      const response = await axios.post('http://localhost:5000/api/items', { title, description });
+      const response = await axios.post('https://todobackend-pratik3311s-projects.vercel.app/', { title, description });
       setItems([...items, response.data]);
       setTitle('');
       setDescription('');
